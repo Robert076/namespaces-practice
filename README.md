@@ -22,3 +22,8 @@ kubectl create ns custom-ns
 ```bash
 kubectl apply -f custom-ns-2.yml
 ```
+
+4. Deleting a namespace:
+```bash
+kubectl delete ns/custom-ns
+```
