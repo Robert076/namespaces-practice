@@ -27,3 +27,9 @@ kubectl apply -f custom-ns-2.yml
 ```bash
 kubectl delete ns/custom-ns
 ```
+
+5. Create a resource(eg: configmap) in a certain namespace:
+```bash
+kubectl create cm configmap-test --from-literal=Lorem=Ipsum -n custom-ns
+```
+
