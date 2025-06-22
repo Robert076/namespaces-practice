@@ -11,3 +11,6 @@ spec:
         requests:
           memory: "512Mi" # needs at least 512mb ram to run properly
           cpu: "250m" # needs at least 250 millicores (an entire core has 1000 milicores)
+        limits:
+          memory: "1Gi"
+          cpu: "1000m"
