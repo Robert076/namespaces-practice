@@ -33,5 +33,14 @@ kubectl delete ns/custom-ns
 kubectl create cm configmap-test --from-literal=Lorem=Ipsum -n custom-ns
 ```
 
-Also, note that you can override the key to the namespaces of the resources that you create declaratively. By adding the -n option to the kubectl create command, you force a namespace as the context for your command: kubectl will take the namespace that was passed in the command into account, not the one present in the YAML file. By doing this, it becomes very easy to duplicate your resources between
-different namespaces; for example, a production environment in a production namespace and a test environment in a test namespace. The possibilities are endless!
+Also, note that you can override the key to the namespaces of the resources that you create declaratively. By adding the -n option to the kubectl create command, you force a namespace as the context for your command: kubectl will take the namespace that was passed in the command into account, not the one present in the YAML file. By doing this, it becomes very easy to duplicate your resources between different namespaces; for example, a production environment in a production namespace and a test environment in a test namespace. The possibilities are endless!
+
+6. Update your default namespace (kind cluster):
+```bash
+kubectl config set-context kind-kind --namespace=robycu
+```
+
+7. Get the namespace used by default in your config (only works after you set it manually, by default it is not displayed):
+```bash
+kubectl config view | grep -i "namespace"
+```
