@@ -7,3 +7,7 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:latest
+      resources:
+        requests:
+          memory: "512Mi" # needs at least 512mb ram to run properly
+          cpu: "250m" # needs at least 250 millicores (an entire core has 1000 milicores)
