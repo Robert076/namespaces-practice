@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: my-resourcequota
+spec:
+  hard:
+    requests.cpu: "1000m"
+    requests.memory: "1Gi"
+    limits.cpu: "2000m"
+    limits.memory: "2Gi"
+    configmaps: "10"
+    services: "5"
+
+# in the namespace that this is created,
+# All the Pods combined won’t be able to request more than 1 CPU core.
+# All the Pods combined won’t be able to request more than 1 GiB of memory.
+# All the Pods combined won’t be able to consume more than 2 CPU cores.
+# All the Pods combined won’t be able to consume more than 2 GiB of memory.
+# There cannot be more than 10 configmaps.
+# There cannot be more than 5 services.
